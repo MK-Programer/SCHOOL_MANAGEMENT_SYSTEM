@@ -17,7 +17,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 /**
  *
- * @author dell
+ * @author Mostafa Khaled
  */
 public class Java_MySQLConnection extends javax.swing.JFrame {
 
@@ -60,15 +60,14 @@ public class Java_MySQLConnection extends javax.swing.JFrame {
             recordTable.setRowCount(0);
             while(rs.next()){
                 Vector columnData = new Vector();
-//                for (i = 0; i <= q; i++){
-                    columnData.add(rs.getShort("id"));
-                    columnData.add(rs.getString("student_id"));
-                    columnData.add(rs.getString("first_name"));
-                    columnData.add(rs.getString("last_name"));
-                    columnData.add(rs.getString("address"));
-                    columnData.add(rs.getString("post_code"));
-                    columnData.add(rs.getString("telephone"));
-//                }
+                columnData.add(rs.getShort("id"));
+                columnData.add(rs.getString("student_id"));
+                columnData.add(rs.getString("first_name"));
+                columnData.add(rs.getString("last_name"));
+                columnData.add(rs.getString("address"));
+                columnData.add(rs.getString("post_code"));
+                columnData.add(rs.getString("telephone"));
+
                 recordTable.addRow(columnData);
             }
         } catch (SQLException e) {
