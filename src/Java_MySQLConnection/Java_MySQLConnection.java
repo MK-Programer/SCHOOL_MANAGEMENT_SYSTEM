@@ -381,7 +381,8 @@ public class Java_MySQLConnection extends javax.swing.JFrame {
                     + "last_name = '"+jtxtLastname.getText()+"', "
                     + "address = '"+jtxtAddress.getText()+"',"
                     + "post_code = '"+jtxtPostCode.getText()+"',"
-                    + "telephone = '"+jtxtTelephone.getText()+"' WHERE student_id = " + jtxtStudentID.getText(); 
+                    + "telephone = '"+jtxtTelephone.getText()+"'"
+                    + "WHERE student_id = '"+jtxtStudentID.getText()+"'"; 
             st.executeUpdate(query);
             JOptionPane.showMessageDialog(this, "Record Updated");
             updateDB();
@@ -415,7 +416,7 @@ public class Java_MySQLConnection extends javax.swing.JFrame {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 conn = DriverManager.getConnection(database, username, password);
                 st = conn.createStatement();
-                String query = "DELETE FROM students WHERE student_id = " + id; 
+                String query = "DELETE FROM students WHERE id = " + id; 
                 st.executeUpdate(query);
                 JOptionPane.showMessageDialog(this, "Record Deleted");
                 updateDB();
@@ -461,7 +462,6 @@ public class Java_MySQLConnection extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Java_MySQLConnection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
